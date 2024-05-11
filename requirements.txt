@@ -1,0 +1,11 @@
+transformers
+datasets
+huggingface_hub
+torch 
+dataclasses
+typing
+evaluate
+jiwer
+
+pyYAML
+-e .

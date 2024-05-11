@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: VideotoText
+Version: 0.0.0
+Summary: A small python package for Video to Text transcription
+Home-page: https://github.com/RashmiShinde21/Vid2Text
+Author: RashmiShinde21
+Author-email: wwwrashmishinde2002@gmail.com
+Project-URL: Bug Tracker, https://github.com/RashmiShinde21/Vid2Text/issues
+License-File: LICENSE
+
+# Vid2Text

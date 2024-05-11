@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+src/VideotoText/__init__.py
+src/VideotoText.egg-info/PKG-INFO
+src/VideotoText.egg-info/SOURCES.txt
+src/VideotoText.egg-info/dependency_links.txt
+src/VideotoText.egg-info/top_level.txt
+src/VideotoText/components/__init__.py
+src/VideotoText/config/__init__.py
+src/VideotoText/config/configuration.py
+src/VideotoText/constants/__init__.py
+src/VideotoText/entity/__init__.py
+src/VideotoText/logging/__init__.py
+src/VideotoText/pipeline/__init__.py
+src/VideotoText/utils/__init__.py
+src/VideotoText/utils/common.py

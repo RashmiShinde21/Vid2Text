@@ -6,6 +6,6 @@ dataclasses
 typing
 evaluate
 jiwer
-
+ensure
 pyYAML
 -e .

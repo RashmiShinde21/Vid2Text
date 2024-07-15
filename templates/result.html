@@ -1,0 +1,208 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Processing Result</title>
+  </head>
+  <body>
+    <h1>Processing Result</h1>
+    <p>{{ process_output }}</p>
+    <p>{{ additional_output }}</p>
+    <p>{{output}}</p>
+    <p>{{video_path}}</p>
+    <a href="{{ url_for('upload_file') }}">Upload another video</a>
+  </body>
+</html>-->
+
+<!--<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Processing Result</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom right, #4e54c8, #8f94fb);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .result-box {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 80%;
+        text-align: center;
+      }
+      .result-text {
+        width: 100%;
+        height: 200px; /* Adjust height as needed */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 14px;
+        resize: vertical;
+      }
+      .download-button {
+        display: inline-block;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      .download-button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="result-box">
+      <h1>Transcription</h1>
+      <textarea class="result-text" readonly>{{ output }}</textarea>
+      <br />
+      <a
+        href="#"
+        class="download-button"
+        id="downloadButton"
+        download="result1.txt"
+        >Download</a
+      >
+     
+        <br />
+        <a href="{{ url_for('upload_file') }}">Upload another video</a>
+      </p>
+    </div>
+
+    <script>
+      // Function to download text from textarea
+      document
+        .getElementById("downloadButton")
+        .addEventListener("click", function () {
+          var textToSave = document.querySelector(".result-text").value;
+          var hiddenElement = document.createElement("a");
+          hiddenElement.href =
+            "data:text/plain;charset=utf-8," + encodeURIComponent(textToSave);
+          hiddenElement.target = "_blank";
+          hiddenElement.download = "result1.txt";
+          hiddenElement.click();
+        });
+    </script>
+  </body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Processing Result</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom right, #4e54c8, #8f94fb);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .result-box {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 80%;
+        text-align: center;
+      }
+      .result-text {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 14px;
+        resize: none;
+        overflow: hidden; /* Hide the scrollbar */
+      }
+      .download-button {
+        display: inline-block;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      .download-button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="result-box container">
+      <h1 class="mt-5">Transcription</h1>
+      <textarea class="result-text form-control" readonly>
+{{ output }}</textarea
+      >
+      <br />
+      <a
+        href="#"
+        class="download-button btn btn-success"
+        id="downloadButton"
+        download="result1.txt"
+        >Download</a
+      >
+      <br />
+      <a href="{{ url_for('upload_file') }}" class="mt-3 btn btn-primary"
+        >Upload another video</a
+      >
+    </div>
+
+    <!-- Bootstrap JS (Optional, for some components like tooltips, popovers, etc.) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Function to download text from textarea
+      document
+        .getElementById("downloadButton")
+        .addEventListener("click", function () {
+          var textToSave = document.querySelector(".result-text").value;
+          var hiddenElement = document.createElement("a");
+          hiddenElement.href =
+            "data:text/plain;charset=utf-8," + encodeURIComponent(textToSave);
+          hiddenElement.setAttribute("download", "transcript.txt");
+          hiddenElement.style.display = "none";
+          document.body.appendChild(hiddenElement);
+          hiddenElement.click();
+          document.body.removeChild(hiddenElement);
+        });
+
+      // Function to auto-resize textarea based on content
+      function autoResizeTextarea() {
+        const textarea = document.querySelector(".result-text");
+        textarea.style.height = "auto"; // Reset height to auto
+        textarea.style.height = textarea.scrollHeight + "px"; // Set height to scrollHeight
+      }
+
+      // Auto-resize on page load
+      window.addEventListener("load", autoResizeTextarea);
+    </script>
+  </body>
+</html>

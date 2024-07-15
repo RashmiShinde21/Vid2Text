@@ -6,3 +6,175 @@
 [2024-05-12 12:59:25,498: INFO: common: created directory at: ./root_dir]
 [2024-05-12 13:03:14,019: INFO: common: created directory at: ./root_dir]
 [2024-07-14 13:01:21,727: INFO: main: >>>>>> loggingstarted <<<<<<]
+[2024-07-15 19:31:59,960: INFO: config: PyTorch version 2.3.1 available.]
+[2024-07-15 19:32:06,845: INFO: main: >>>>>> loggingstarted <<<<<<]
+[2024-07-15 19:32:06,846: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-07-15 19:32:06,854: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-15 19:32:06,856: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-15 19:32:06,856: ERROR: main: yaml file is empty]
+Traceback (most recent call last):
+  File "f:\rash-learns\vidtotext2\vid2text\src\VideotoText\utils\common.py", line 30, in read_yaml
+    return ConfigBox(content)
+  File "box\\box.py", line 284, in box.box.Box.__init__
+box.exceptions.BoxValueError: Cannot extrapolate Box from string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\rash-learns\VidtoText2\Vid2Text\main.py", line 12, in <module>
+    data_transformation.main()
+  File "F:\rash-learns\VidtoText2\Vid2Text\src\VideotoText\pipeline\stage_02_data_transformation.py", line 11, in main
+    config = ConfigurationManager()
+  File "f:\rash-learns\vidtotext2\vid2text\src\VideotoText\config\configuration.py", line 15, in __init__
+    self.params = read_yaml(params_filepath)
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\ensure\main.py", line 872, in __call__
+    return_val = self.f(*args, **kwargs)
+  File "f:\rash-learns\vidtotext2\vid2text\src\VideotoText\utils\common.py", line 32, in read_yaml
+    raise ValueError("yaml file is empty")
+ValueError: yaml file is empty
+[2024-07-15 19:35:42,405: INFO: config: PyTorch version 2.3.1 available.]
+[2024-07-15 19:35:44,117: INFO: main: >>>>>> loggingstarted <<<<<<]
+[2024-07-15 19:35:44,117: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-07-15 19:35:44,123: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-15 19:35:44,130: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-15 19:35:44,132: INFO: common: created directory at: artifacts]
+[2024-07-15 19:35:44,133: INFO: common: created directory at: artifacts/data_transformation]
+[2024-07-15 19:35:54,468: ERROR: main: To support decoding audio files, please install 'librosa' and 'soundfile'.]
+Traceback (most recent call last):
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\features\audio.py", line 153, in decode_example
+    import librosa
+ModuleNotFoundError: No module named 'librosa'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\rash-learns\VidtoText2\Vid2Text\main.py", line 12, in <module>
+    data_transformation.main()
+  File "F:\rash-learns\VidtoText2\Vid2Text\src\VideotoText\pipeline\stage_02_data_transformation.py", line 14, in main
+    data_transformation.convert()
+  File "f:\rash-learns\vidtotext2\vid2text\src\VideotoText\components\data_tranformation.py", line 51, in convert
+    p_dataset = self.convert_data_to_features(dataset)
+  File "f:\rash-learns\vidtotext2\vid2text\src\VideotoText\components\data_tranformation.py", line 41, in convert_data_to_features
+    p1_dataset = p_dataset.map(
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\dataset_dict.py", line 869, in map
+    {
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\dataset_dict.py", line 870, in <dictcomp>
+    k: dataset.map(
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\arrow_dataset.py", line 602, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\arrow_dataset.py", line 567, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\arrow_dataset.py", line 3161, in map
+    for rank, done, content in Dataset._map_single(**dataset_kwargs):
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\arrow_dataset.py", line 3522, in _map_single
+    example = apply_function_on_filtered_inputs(example, i, offset=offset)
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\arrow_dataset.py", line 3421, in apply_function_on_filtered_inputs
+    processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+  File "f:\rash-learns\vidtotext2\vid2text\src\VideotoText\components\data_tranformation.py", line 10, in prepare_dataset
+    audio = example["audio"]
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\formatting\formatting.py", line 273, in __getitem__
+    value = self.format(key)
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\formatting\formatting.py", line 371, in format
+    return self.formatter.format_column(self.pa_table.select([key]))[0]
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\formatting\formatting.py", line 443, in format_column
+    column = self.python_features_decoder.decode_column(column, pa_table.column_names[0])
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\formatting\formatting.py", line 219, in decode_column
+    return self.features.decode_column(column, column_name) if self.features else column
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\features\features.py", line 2008, in decode_column
+    [decode_nested_example(self[column_name], value) if value is not None else None for value in column]
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\features\features.py", line 2008, in <listcomp>
+    [decode_nested_example(self[column_name], value) if value is not None else None for value in column]
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\features\features.py", line 1351, in decode_nested_example
+    return schema.decode_example(obj, token_per_repo_id=token_per_repo_id)
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\datasets\features\audio.py", line 156, in decode_example
+    raise ImportError("To support decoding audio files, please install 'librosa' and 'soundfile'.") from err
+ImportError: To support decoding audio files, please install 'librosa' and 'soundfile'.
+[2024-07-15 19:38:08,039: INFO: config: PyTorch version 2.3.1 available.]
+[2024-07-15 19:38:17,853: INFO: main: >>>>>> loggingstarted <<<<<<]
+[2024-07-15 19:38:17,854: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-07-15 19:38:17,857: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-15 19:38:17,862: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-15 19:38:17,862: INFO: common: created directory at: artifacts]
+[2024-07-15 19:38:17,863: INFO: common: created directory at: artifacts/data_transformation]
+[2024-07-15 19:45:03,100: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-07-15 19:45:03,101: INFO: main: *******************]
+[2024-07-15 19:45:03,101: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-07-15 19:45:03,104: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-15 19:45:03,109: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-15 19:45:03,110: INFO: common: created directory at: artifacts]
+[2024-07-15 19:45:03,111: INFO: common: created directory at: artifacts/model_trainer]
+[2024-07-15 19:45:09,959: ERROR: main: Using the `Trainer` with `PyTorch` requires `accelerate>=0.21.0`: Please run `pip install transformers[torch]` or `pip install accelerate -U`]
+Traceback (most recent call last):
+  File "F:\rash-learns\VidtoText2\Vid2Text\main.py", line 23, in <module>
+    model_trainer.main()
+  File "F:\rash-learns\VidtoText2\Vid2Text\src\VideotoText\pipeline\stage_03_model_trainer.py", line 15, in main
+    model_trainer.train()
+  File "f:\rash-learns\vidtotext2\vid2text\src\VideotoText\components\model_trainer.py", line 91, in train
+    training_args = Seq2SeqTrainingArguments(
+  File "<string>", line 134, in __init__
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\transformers\training_args.py", line 1693, in __post_init__
+    self.device
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\transformers\training_args.py", line 2171, in device
+    return self._setup_devices
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\transformers\utils\generic.py", line 60, in __get__
+    cached = self.fget(obj)
+  File "F:\rash-learns\VidtoText2\Vid2Text\vt\lib\site-packages\transformers\training_args.py", line 2051, in _setup_devices
+    raise ImportError(
+ImportError: Using the `Trainer` with `PyTorch` requires `accelerate>=0.21.0`: Please run `pip install transformers[torch]` or `pip install accelerate -U`
+[2024-07-15 19:47:13,420: INFO: config: PyTorch version 2.3.1 available.]
+[2024-07-15 19:47:23,178: INFO: main: >>>>>> loggingstarted <<<<<<]
+[2024-07-15 19:47:23,179: INFO: main: *******************]
+[2024-07-15 19:47:23,179: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-07-15 19:47:23,183: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-15 19:47:23,188: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-15 19:47:23,189: INFO: common: created directory at: artifacts]
+[2024-07-15 19:47:23,190: INFO: common: created directory at: artifacts/model_trainer]
+[2024-07-15 19:50:14,333: INFO: config: PyTorch version 2.3.1 available.]
+[2024-07-15 19:50:24,360: INFO: main: >>>>>> loggingstarted <<<<<<]
+[2024-07-15 19:50:24,361: INFO: main: *******************]
+[2024-07-15 19:50:24,361: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-07-15 19:50:24,364: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-15 19:50:24,372: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-15 19:50:24,373: INFO: common: created directory at: artifacts]
+[2024-07-15 19:50:24,374: INFO: common: created directory at: artifacts/model_trainer]
+[2024-07-15 19:56:58,233: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2024-07-15 19:56:58,272: INFO: main: *******************]
+[2024-07-15 19:56:58,273: INFO: main: >>>>>> stage Model Evaluation stage started <<<<<<]
+[2024-07-15 19:56:58,766: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-15 19:56:59,050: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-15 19:56:59,051: INFO: common: created directory at: artifacts]
+[2024-07-15 19:56:59,051: INFO: common: created directory at: artifacts/model_evaluation]
+[2024-07-15 19:58:47,706: ERROR: main: [Errno 2] No such file or directory: 'F:\\rash-learns\\VideotoText\\Vid2Text\\artifacts\\model_evaluation\\metrics.csv']
+Traceback (most recent call last):
+  File "F:\rash-learns\VidtoText2\Vid2Text\main.py", line 35, in <module>
+    model_evaluation.main()
+  File "F:\rash-learns\VidtoText2\Vid2Text\src\VideotoText\pipeline\stage_04_model_evaluation.py", line 16, in main
+    model_evaluation_config.evaluate()
+  File "f:\rash-learns\vidtotext2\vid2text\src\VideotoText\components\model_evaluation.py", line 58, in evaluate
+    save_word_to_csv(wer,r"F:\rash-learns\VideotoText\Vid2Text\artifacts\model_evaluation\metrics.csv")
+  File "f:\rash-learns\vidtotext2\vid2text\src\VideotoText\components\model_evaluation.py", line 26, in save_word_to_csv
+    with open(filename, 'w', newline='') as csvfile:
+FileNotFoundError: [Errno 2] No such file or directory: 'F:\\rash-learns\\VideotoText\\Vid2Text\\artifacts\\model_evaluation\\metrics.csv'
+[2024-07-15 20:01:02,877: INFO: config: PyTorch version 2.3.1 available.]
+[2024-07-15 20:01:12,821: INFO: main: >>>>>> loggingstarted <<<<<<]
+[2024-07-15 20:01:12,822: INFO: main: *******************]
+[2024-07-15 20:01:12,822: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-07-15 20:01:12,824: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-15 20:01:12,828: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-15 20:01:12,829: INFO: common: created directory at: artifacts]
+[2024-07-15 20:01:12,830: INFO: common: created directory at: artifacts/model_trainer]
+[2024-07-15 20:02:54,413: INFO: config: PyTorch version 2.3.1 available.]
+[2024-07-15 20:02:57,470: INFO: main: >>>>>> loggingstarted <<<<<<]
+[2024-07-15 20:02:57,471: INFO: main: *******************]
+[2024-07-15 20:02:57,471: INFO: main: >>>>>> stage Model Evaluation stage started <<<<<<]
+[2024-07-15 20:02:57,474: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-15 20:02:57,479: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-15 20:02:57,480: INFO: common: created directory at: artifacts]
+[2024-07-15 20:02:57,481: INFO: common: created directory at: artifacts/model_evaluation]
+[2024-07-15 20:04:00,005: INFO: main: >>>>>> stage Model Evaluation stage completed <<<<<<
+
+x==========x]

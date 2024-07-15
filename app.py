@@ -25,19 +25,12 @@ def upload_file():
             video_file.save(video_path)
             
             
-            # Process the video
-            #process_output = process_video(video_path)
-           # output=transcribe_speech1(video_path)
-            #output=transcribe_speech(video_path)
-            #output=predict(video_path)
+           
             obj = PredictionPipeline()
             text = obj.transcribe_speech(video_path)
             
             
-            # Run additional processing
-            #additional_output = additional_processing(video_path)
-            
-            # Display result
+           
             return render_template('result.html', output=text,video_path=video_path,filename=filename)
     return render_template('upload.html', form=form)
 

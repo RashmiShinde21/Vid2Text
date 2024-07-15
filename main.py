@@ -4,7 +4,7 @@ from src.VideotoText.pipeline.stage_03_model_trainer import ModelTrainingPipelin
 from src.VideotoText.pipeline.stage_04_model_evaluation import ModelEvaluationTrainingPipeline
 
 logger.info(f">>>>>> loggingstarted <<<<<<") 
-'''
+
 STAGE_NAME = "Data Transformation stage"
 try:
    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
@@ -14,8 +14,7 @@ try:
 except Exception as e:
         logger.exception(e)
         raise e
-  '''
-'''
+  
 STAGE_NAME = "Model Trainer stage"
 try: 
    logger.info(f"*******************")
@@ -26,7 +25,7 @@ try:
 except Exception as e:
         logger.exception(e)
         raise e
-'''
+
 
 STAGE_NAME = "Model Evaluation stage"
 try: 

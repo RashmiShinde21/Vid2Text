@@ -20,7 +20,7 @@ class ModelTrainerConfig:
    
     lr_scheduler_type:str
     warmup_steps:int
-    max_steps:int  # increase to 4000 if you have your own GPU or a Colab paid plan
+    max_steps:int  
     gradient_checkpointing:bool
     evaluation_strategy:str
     per_device_eval_batch_size:int

@@ -1,2 +1,4 @@
-# Vid2Text
-Welcome to the Video to Text Transcription System
+#Video To Text Transcription System with CI/CD integration using Github Actions
+
+
+

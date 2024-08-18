@@ -9,4 +9,6 @@ This project aims to convert the given video content into text. Further it demon
 ## Snapshots
 
 
+![image](https://github.com/user-attachments/assets/81f9ddc8-28e4-49de-8f69-059577e0f14e)
+
 

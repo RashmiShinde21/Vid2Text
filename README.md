@@ -10,5 +10,10 @@ This project aims to convert the given video content into text. Further it demon
 
 
 ![image](https://github.com/user-attachments/assets/81f9ddc8-28e4-49de-8f69-059577e0f14e)
+![image](https://github.com/user-attachments/assets/ffde10ee-e4d2-4b47-a57c-a7a3e37edb30)
+![image](https://github.com/user-attachments/assets/514fd473-a120-4d6b-b473-8a355291c6af)
+
+
+
 
 
